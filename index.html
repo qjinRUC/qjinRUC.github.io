@@ -1,0 +1,80 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content ="text/html" charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Qin Jin</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="container col-md-8 col-md-offset-2">
+		<div class="page-header media">
+			<div class="col-md-3 col-xs-4">
+				<h1 class="title">Qin Jin</h1>
+			</div>
+			<div class="col-md-9 col-xs-14">
+				<h1><small class="subtitle">
+					Associate Professor<br>
+					School of Infomation<br>
+					Renmin University of China
+				</small></h1>
+			</div>
+		</div>
+		<nav>
+			<ul id="menu" class="list-unstyled pull-right">
+				<li><a href="index.html" class="menu-active">Home</a></li>
+				<li><a href="research.html">Research</a></li>
+				<li><a href="publications.html">Publications</a></li>
+				<li><a href="awards-services.html">Awards/Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<div id="bio" class="container col-md-8 col-md-offset-2">
+		<div class="media">
+			<div class="col-md-3 col-xs-4">
+				<img class="media-object img-rounded" src="images/img.jpg" alt="...">
+			</div>
+			<div class="col-md-9 col-xs-14">
+				<b>Bio</b>. Qin Jin received her B.Sc. and M.S. degrees in computer science and technologies from Tsinghua University, Beijing, China in 1996, 1999, respectively. She received her Ph.D. degree in Language and Information Technologies from Carnegie Mellon University in 2007. She worked as research faculty at Language Technologies Institute in Carnegie Mellon University afterwards till March, 2012. She became Research Scientist of IBM China Research Laboratory from April, 2012 - December 2012. She is currently Associate Professor at School of Information in Renmin University of China. She is leading the multimedia content analysis research group.
+			</div>
+		</div>
+	</div>
+	
+	<div class="container col-md-8 col-md-offset-2">
+		<div class="bs-callout bs-callout-info">
+			<h3><i>News</i></h3>
+			<ul id="news" class="list-unstyled"></ul>
+		</div>
+	</div>
+
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		
+		$(document).ready(function() {
+			$('#news').load('news-list.html', function () {
+				$('#news li').prepend('<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:12px"></span>&nbsp;');
+				$('#news').append($('<div id="morenews" class="collapse"></div>'));
+				$('#morenews').append($('#news li:gt(3)'));
+				if ($('#morenews').text() != '') {
+					var morebtn = $('<a role="button" data-toggle="collapse" data-target="#morenews" aria-expanded="false" aria-controls="morenews">more</a>');
+					morebtn.click(function () {
+						if (morebtn.text() == 'more') {
+							morebtn.text('less');
+						} else {
+							morebtn.text('more');
+						}
+					});
+					$('#news').append(morebtn);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
