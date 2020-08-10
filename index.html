@@ -53,17 +53,17 @@
 	</div>
 
 	
-	<script src="js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
 		
 		$(document).ready(function() {
 			$('#news').load('news-list.html', function () {
-				$('#news li').prepend('<span class="glyphicon glyphicon-chevron-right" aria-hidden="false" style="font-size:12px"></span>&nbsp;');
+				$('#news li').prepend('<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:12px"></span>&nbsp;');
 				$('#news').append($('<div id="morenews" class="collapse"></div>'));
 				$('#morenews').append($('#news li:gt(3)'));
 				if ($('#morenews').text() != '') {
-					var morebtn = $('<a role="button" data-toggle="collapse" data-target="#morenews" aria-expanded="true" aria-controls="morenews">more</a>');
+					var morebtn = $('<a role="button" data-toggle="collapse" data-target="#morenews" aria-expanded="false" aria-controls="morenews">more</a>');
 					morebtn.click(function () {
 						if (morebtn.text() == 'more') {
 							morebtn.text('less');
@@ -76,5 +76,7 @@
 			});
 		});
 	</script>
+
+
 </body>
 </html>
