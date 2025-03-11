@@ -61,7 +61,7 @@
 			$('#news').load('news-list.html', function () {
 				$('#news li').prepend('<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:12px"></span>&nbsp;');
 				$('#news').append($('<div id="morenews" class="collapse"></div>'));
-				$('#morenews').append($('#news li:gt(10)'));
+				$('#morenews').append($('#news li:gt(8)'));
 				if ($('#morenews').text() != '') {
 					var morebtn = $('<a role="button" data-toggle="collapse" data-target="#morenews" aria-expanded="false" aria-controls="morenews">More</a>');
 					morebtn.click(function () {
