@@ -45,37 +45,6 @@
 		</div>
 	</div>
 	
-	<div class="container col-md-8 col-md-offset-2">
-		<div class="bs-callout bs-callout-info">
-			<h3><i>News</i></h3>
-			<ul id="news" class="list-unstyled"></ul>
-		</div>
-	</div>
-
-	
-<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-		
-		$(document).ready(function() {
-			$('#news').load('news-list.html', function () {
-				$('#news li').prepend('<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="font-size:12px"></span>&nbsp;');
-				$('#news').append($('<div id="morenews" class="collapse"></div>'));
-				$('#morenews').append($('#news li:gt(8)'));
-				if ($('#morenews').text() != '') {
-					var morebtn = $('<a role="button" data-toggle="collapse" data-target="#morenews" aria-expanded="false" aria-controls="morenews">More</a>');
-					morebtn.click(function () {
-						if (morebtn.text() == 'More') {
-							morebtn.text('Less');
-						} else {
-							morebtn.text('More');
-						}
-					});
-					$('#news').append(morebtn);
-				}
-			});
-		});
-	</script>
 
 
 </body>
